@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Vue-Getting Started</title>
+    <meta charset="utf-8">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <input type="text" v-model="name">
+        <p>Hello {{ name }}</p>
+    </div>
+    <script type="text/javascript">
+        new Vue({
+            el: "#app",
+            data() {
+                return {
+                    name: 'zenius'
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

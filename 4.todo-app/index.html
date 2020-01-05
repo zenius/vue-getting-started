@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Todo List</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="./css/index.css">
+</head>
+<body>
+
+	<div id="app">
+
+		<!-- attribute binding -->
+		<img v-bind:src="image" :alt="alt" />
+		<h1 id="header">Todo List</h1>
+		
+
+		<div>
+			<section>
+				<!-- event handling -->
+				<input type="text" v-model="textInput" v-on:keyup.enter="addItem">
+				<button v-on:click="addItem">
+				{{ mode ==='new'? 'Add Todo': 'Edit Todo' }}</button>
+			</section>
+
+			<section>
+				<!-- conditional rendering -->
+				<button @click='undoEdit' v-show="mode==='edit'">Cancel Edit</button>
+
+				<button @click="deleteAllItems" v-show="items.length > 0">Clear All</button>
+			</section>
+		
+	
+			<section>
+				<ul>
+					<!-- list rendering -->
+					<li v-for="item in items" :key="item.Id">
+						{{ item.value }}
+						<button @click="deleteItem(item.Id)">
+							Remove
+						</button>
+
+						<!-- style binding -->
+						<button 
+						    @click="editItem(item.Id)" 
+						    :disabled ="mode === 'edit'"
+						    :style="[mode==='edit'? disabledButton: '']"
+						>
+							Edit
+						</button>
+					</li>
+				</ul>
+			</section>
+		
+		</div>
+
+	</div>
+	<!-- cdn script -->
+	<!-- <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> -->
+	<script type="text/javascript" src="./js/vue.js"></script>
+	<script type="text/javascript" src="./js/index.js"></script>
+
+</body>
+</html>
+

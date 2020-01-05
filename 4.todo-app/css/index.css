@@ -1,0 +1,47 @@
+
+html, body {
+	margin: 0;
+	padding: 0; 
+}
+
+
+#app {
+	width: 500px;
+	margin:10px auto;
+	color: green;
+}
+
+
+#header {
+	display: inline-block;
+}
+
+section {
+	margin: 10px;
+
+}
+
+button {
+	cursor: pointer;
+	border: none;
+	text-align: center;
+	padding: 5px;
+	border-radius: 5px;
+	color: white; 
+	min-width: 60px; 
+	background-color:green;
+}
+
+
+input {
+	border-color: green;
+}
+
+li {
+	margin: 10px;
+}
+
+img {
+	width: 40px;
+	height: 40px;
+}
